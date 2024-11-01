@@ -1,0 +1,6 @@
+.newProducts { display: table; width: 100%; }
+.newProducts .displayRandomRow { display: table-row; }
+.newProducts .displayRandomColumnOuter { display: table-cell; vertical-align: top; }
+.newProducts .displayRandomColumnInner { border: 1px dotted black; text-align: center; margin: 1%; padding: 2%; }
+.strikethru, .normalprice { text-decoration: line-through; }
+.productSpecialPrice, .productPriceDiscount { color: red; }

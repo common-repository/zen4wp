@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Zen Cart&reg; for Wordpress (zen4wp)</title>
+
+<style type="text/css">
+<!--
+a, a:active, a:visited { color: #006666; text-decoration: none; }
+a:hover { color:#00CC99; text-decoration: underline; }
+BODY, P, H1, H2, H3, H4, H5, H6, LI, TD, DD, DT, ul, ol, code { 
+  font-family: Verdana, AvantGarde, Tahoma, Arial, sans-serif;
+  font-size: 10pt;
+  color: black;
+  padding: 0px;
+  margin: 20px;
+}
+code { font-family: Courier; }
+H1, H2, H3, H4 { font-weight: bold; padding: 7px; }
+h1 { font-size: 20px; }
+h2 { font-size: 16px; background-color: #ababab; border: 1px solid #505050; }
+h3 { background-color: #d2d2d2; border: 1px solid #ababab; }
+h4 { background-color: #ebebeb; border: 1px solid #7b7b7b;}
+pre { padding-left: 25px; }
+.corefile { color: red; }
+.removed { text-decoration: line-through; }
+.minspacing li { margin: 0; }
+ol li, ul li, ol li ul, ul li ul, ul li ol, ol li ol, ol li ul li, ol li ol li, ul li ul li, ul li ol li { margin-top: 5px; margin-bottom: 5px; }
+ul li ul { padding-left: 0; }
+.level1 { padding-left: 20px; }
+.table { display: table; font-size: 8pt; padding-left: 20px;}
+.thead_outer, .item_outer { display: table-row; }
+.thead, .item { display: table-cell; padding: 5px 10px;}
+.thead_outer { font-weight: bold; }
+.table ul { list-style-type: none; padding-left: 0; margin: 0; }
+.table ul li { margin: 0; }
+.c1 {}
+.c2 {}
+.c3 {}
+.c3a, .c4, .c5 { text-align: center;}
+.c5 {}
+.c { text-align: center; }
+.odd, .head_outer { background-color: #d2d2d2; }
+.desc { margin: 0 10px 0 40px; border: 1px solid #d2d2d2; border-top-style: none; }
+.desc p { margin: 10px; }
+.elmt { padding: 10px; background-color: #ebebeb; margin: 10px;}
+.title { font-weight: bold; }
+.desc pre { background-color: white; border: 1px solid black; padding: 5px; }
+.smaller { font-size: smaller; }
+.po2 { color: blue; }
+.po1 { color: #006666; }
+-->
+</style>
+</head>
+
+<body>
+<a name="top" id="top"></a>
+<h1>Zen Cart&reg; for WordPress (zen4wp) &mdash; Version 1.3.0</h1>
+<h3>About this Plugin</h3>
+<p>If you are interested integrating Zen Cart and WordPress, it's probably because you want to mention the products from your Zen Cart store in your WordPress blog. Wouldn't it be nice to be able to put links to your products into the relevant blog posts and pages? Wouldn't it be nice to have the ability to display your New or Featured Products on the home page of your WordPress blog <b>and</b> have those listings update automatically as your Zen Cart store changes?</p>
+<p>WordPress is known as one of the best open-source Content Management Systems (CMS) for creating blogs while Zen Cart is a one of the best open-source frameworks to build an on-line shopping cart. Each has its own outstanding features, but the combination of them will create a great product which we are calling "<b>Zen Cart&reg; for WordPress (zen4wp)</b>". Basically, <em>zen4wp</em> is a WordPress plugin that can be used to integrate Zen Cart into WordPress so that shopowners can display Zen Cart content on their WordPress site via a series of widgets and shortcodes.</p>
+<h3>Credits</h3>
+<p>This series of widgets and shortcodes that provide linkage between a Zen Cart and an associated a WordPress installation are based on specifications created by Crystal Hill-Jones of <a href="http://overthehillweb.com" title="Over the Hill Web Consulting" target="_blank">Over the Hill Web Consulting</a><span class="smaller"> (Opens in a new window)</span>. Code development by Cindy Merkin  of <a href="http://vinosdefrutastropicales.com" title="Vinos de Frutas Tropicales" target="_blank">Vinos de Frutas Tropicales</a><span class="smaller"> (Opens in a new window)</span>. The cookie-handling that makes the shopping-cart widget possible is based on the Zen Cart plugin <a href="http://www.zen-cart.com/downloads.php?do=file&amp;id=992" target="_blank">Keep Cart</a> <span class="smaller">(Opens in a new window)</span>.</p>
+<h3>Prerequisites</h3>
+<p>Following are the prerequisites for this series of WordPress widgets and shortcodes to operate properly:</p>
+<ul>
+  <li>A Zen Cart store installed and operable.  Tested with Zen Cart v1.5.1.</li>
+  <li>WordPress installed and operable.  Tested with WordPress versions v3.5.1 through current versions.</li>
+  <li>The Zen Cart and WordPress installations share a common mySQL database.</li>
+  <li>The Zen Cart and WordPress installations  must share the same domain.</li>
+  <li>You must first install the (free) base plugin</li>
+  <li>A properly-edited <em>Settings-&gt;Set Zen4Wp Options</em> to identify the configuration of the two installations.</li>
+  <li>The visitor to your Zen Cart store and WordPress blog must have both cookies and javascript enabled for the shopping-cart widget and the cart attribute of the product short-code to function properly.</li>
+</ul>
+
+<hr />
+<h2>What it does</h2>
+<p>This series of WordPress widgets and shortcodes provide methods to seamlessly link your Zen Cart products to your WordPress blog. All the methods available are listed below; the methods provided are dependent on the <em>zen4wp</em> package you choose. To use the premium (paid) features, you must first install the (free) base plugin:</p>
+<div class="table">
+  <div class="thead_outer">
+    <div class="thead c">Series Version</div>
+    <div class="thead c">Widget</div>
+    <div class="thead c">Shortcode</div>
+    <div class="thead c">Base (Free)</div>
+    <div class="thead c">Premium &mdash; Option 1</div>
+    <div class="thead c">Premium &mdash; Option 2</div>
+    <div class="thead">Name and Short Description</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#bs">zen4wp_best_sellers</a></strong>. Displays an ordered-list that contains the current best-sellers from the Zen Cart store, each list-item is a link back to the associated product's detailed information page. You configure the number to display and whether the purchase-count is included.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#fp">zen4wp_featured</a></strong>. Displays a collection of featured-products from the Zen Cart store, including the product's name, image and price with a link back to the product's detailed information page. You configure the total number and the number-per-row for each instance.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#np">zen4wp_new</a></strong>. Displays a collection of new-products from the Zen Cart store, including the product's name, image and price with a link back to the product's detailed information page. You configure the total number and the number-per-row for each instance. The Zen Cart configuration controls what products are considered <em>new</em>.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#sp">zen4wp_specials</a></strong>. Displays a collection of products-on-special from the Zen Cart store, including the product's name, image and price with a link back to the product's detailed information page. You configure the total number and the number-per-row for each instance.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#cl">zen4wp_categories</a></strong>. Displays a list of top-level category links from the Zen Cart store, including each category's name. This widget is <em>hideCategories</em>-aware, i.e. if a top-level category is hidden, its link will not be shown.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#ml">zen4wp_manufacturers</a></strong>. Displays a list of links to the index-listing page for each of the manufacturers from the Zen Cart store.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#pr">zen4wp_reviews</a></strong>. Displays a collection of product reviews from the Zen Cart store, including the review's text and rating and the product's image with a link back to the review. You configure the total number and the number-per-row for each instance as well as the number of characters of the reviews text to include.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#sc">zen4wp_shopping_cart</a></strong>. If enabled via the Zen Cart admin, this widget shows the number of items and current total amount associated with a customer's Zen Cart shopping cart.  You configure whether the Zen Cart login/logoff and shopping_cart page links are shown, the format of the cart (sidebox vs. header) and whether the cart widget displays when the cart is empty.  Requires a SQL patch and a piece of code running on the Zen Cart store.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#tm">zen4wp_testimonials</a></strong>. If the testimonials_manager plugin is installed, displays a collection of testimonials from the Zen Cart store, modelled after the Testimonials sidebox. You configure the total number and the number-per-row for each instance as well as the number of characters of the testimonials text to include.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#zp">[zenprod id=<em>nn</em>]</a></strong>. Generates an HTML link to the specified product in the Zen Cart store, if the product ID specified is a valid product ID, using the product's name as the anchor-text.  If the ID value is not valid, the string <em>The product with an ID of "nn" was not found.</em> is output.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.3.0+</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#zp">[zenprod id=<em>nn</em> name=ww image=xx price=yy]</a></strong>. Generates an HTML block for the specified product in the Zen Cart store, if the product ID specified is a valid product ID, optionally including the product's name, image and price.  If the ID value is not valid, the string <em>The product with an ID of "nn" was not found.</em> is output.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.3.0+</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#zp">[zenprod id=<em>nn</em> name=ww image=xx price=yy cart=zz]</a></strong>. Generates an HTML block for the specified product in the Zen Cart store, if the product ID specified is a valid product ID, optionally including the product's name, image, price and add-to-cart button.  If the ID value is not valid, the string <em>The product with an ID of "nn" was not found.</em> is output.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#zc">[zencat id=<em>xx</em>]</a></strong>. Generates an HTML link to the specified category in the Zen Cart store, if the category ID specified is a valid category ID, using the category's name as the anchor-text.  If the ID value is not valid, the string <em>The category with an ID of "xx" was not found.</em> is output.</div>
+  </div>
+  <div class="item_outer">
+    <div class="item c">v1.0.0+</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&nbsp;</div>
+    <div class="item c">&radic;</div>
+    <div class="item c">&radic;</div>
+    <div class="item"><strong><a href="#zm">[zenmfgr id=<em>xx</em>]</a></strong>. Generates an HTML link to the specified manufacturer's index page in the Zen Cart store, if the manufacturers ID specified is a valid manufacturers ID, using the manufacturer's name as the anchor-text.  If the ID value is not valid, the string <em>The manufacturer with an ID of "xx" was not found.</em> is output.</div>
+  </div>
+</div>
+<h3>Behind the Scenes</h3>
+<p>The magic that happens behind the scenes takes place in your WordPress installation's /wp-content/plugins/zen4wp directory.  The majority of the files there (like zen4wp_functions_prices.php) were "cloned" from the similarly-named modules in Zen Cart v1.5.1 (like functions_prices.php) and adapted to use the WordPress database class to access the common database items.  In each case, the header comment from the Zen Cart base file has been left intact, so that future changes to those files can be detected more easily.  Wherever a language-based element (like a product's description) is pulled from the database, the languages_id value has been left as part of the mySQL SELECT statement but hardcoded the value as <em>1</em> (usually English) to allow for possible future multi-lingual support.</p>
+<p>The file zen4wp_init_configuration.php pulls the Zen Cart configuration values <strong>that are currently used</strong> from the database for use by the cloned Zen Cart functions and classes.  If modifications are made in the future, the list of configuration_key values should be checked to ensure that any additional configuration keys' values are properly initialized!</p>
+
+<hr />
+
+<h2>Installation</h2>
+<p>This section lists the files that make up the full set of <em>zen4wp</em> options, consisting of the base files, the <span class="po1">Premium &mdash; Option 1</span> files and the <span class="po2">Premium &mdash; Option 2</span> files. <span class="smaller">(<span class="po1">Premium &mdash; Option 1</span> files also included in <span class="po2">Premium &mdash; Option 2</span>)</span></p>
+<ol>
+  <li>Make sure to backup your database before making any changes!  The installation consists of copying the following files from the <em>WordPress Plugin</em> folder to your WordPress environment:<ol>
+    <li>/wp-content/plugins/zen4wp/css/zen4wp_best_sellers.css</li>
+    <li>/wp-content/plugins/zen4wp/css/zen4wp_categories.css</li>
+    <li>/wp-content/plugins/zen4wp/css/zen4wp_featured.css</li>
+    <li>/wp-content/plugins/zen4wp/css/zen4wp_new.css</li>
+    <li><span class="po1">/wp-content/plugins/zen4wp/css/zen4wp_manufacturers.css</span></li>
+    <li><span class="po1">/wp-content/plugins/zen4wp/css/zen4wp_reviews.css</span></li>
+    <li><span class="po2">/wp-content/plugins/zen4wp/css/zen4wp_shopping_cart.css</span></li>
+    <li>/wp-content/plugins/zen4wp/css/zen4wp_specials.css</li>
+    <li><span class="po1">/wp-content/plugins/zen4wp/css/zen4wp_testimonials.css</span></li>
+    <li><span class="po2">/wp-content/plugins/zen4wp/css/zen4wp_zenprod.css</span></li>
+    <li><span class="po2">/wp-content/plugins/zen4wp/js/zen4wp_cookie_monitor.js</span></li>
+    <li>/wp-content/plugins/zen4wp/zen4wp.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_best_sellers.php</li>
+    <li><span class="po1">/wp-content/plugins/zen4wp/zen4wp_categories.php</span></li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_config.php</li>
+    <li><span class="po2">/wp-content/plugins/zen4wp/zen4wp_cookie_handler.php</span></li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_currencies.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_featured.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_functions_categories.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_functions_general.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_functions_lookups.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_functions_prices.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_functions_taxes.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_html_output.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_init_configuration.php</li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_init_templates.php</li>
+    <li><span class="po1">/wp-content/plugins/zen4wp/zen4wp_manufacturers.php</span></li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_new.php</li>
+    <li><span class="po1">/wp-content/plugins/zen4wp/zen4wp_reviews.php</span></li>
+    <li><span class="po2">/wp-content/plugins/zen4wp/zen4wp_shopping_cart.php</span></li>
+    <li><span class="po1">/wp-content/plugins/zen4wp/zen4wp_shortcodes.php</span></li>
+    <li>/wp-content/plugins/zen4wp/zen4wp_specials.php</li>
+    <li><span class="po2">/wp-content/plugins/zen4wp/zen4wp_testimonials.php</span></li>
+  </ol></li>
+  <li>Log into your WordPress admin and click <em>Settings-&gt;Set Zen4Wp Options</em>.  You'll use this screen to configure the file and database settings needed for <em>Zen4WP</em> to operate:
+    <ul>
+    <li>HTTP_SERVER.  This value is usually set to the same value as HTTP_SERVER (/includes/configure.php).</li>
+    <li>HTTPS_SERVER.  This value is usually set to the same value as HTTPS_SERVER (/includes/configure.php).</li>
+    <li>DIR_WS_CATALOG. This value is usually set to the same value as DIR_WS_CATALOG (/includes/configure.php).</li>
+    <li>DIR_WS_CATALOG_HTTPS. This value is usually set to the same value as DIR_WS_CATALOG_HTTPS (/includes/configure.php).</li>
+    <li>ENABLE_SSL.  This value is usually set to the same value as ENABLE_SSL (/includes/configure.php).</li>
+    <li>DB_PREFIX.  This value is usually set to the same value as DB_PREFIX (/includes/configure.php).</li>
+    <li>DIR_FS_CATALOG.  This value is usually set to the same value as DIR_FS_CATALOG (/includes/configure.php).</li>
+    <li>OTHER_IMAGE_PRICE_IS_FREE.  This value is usually set to the value of the like-named define in /includes/languages/english/other_image_names.php.</li>
+    <li>OTHER_IMAGE_CALL_FOR_PRICE.  This value is usually set to the value of the like-named define in /includes/languages/english/other_image_names.php.</li>
+  </ul></li>
+
+  <li>If you purchased the <span class="po2">Premium &mdash; Option 2</span> package:<ul>
+    <li>Rename the /YOUR_ADMIN directory within the plugin's <em>Zen Cart Modified Files</em> folder to match the name of your Zen Cart's admin folder.</li>
+    <li>Log into your Zen Cart admin console.</li>
+    <li>Copy the files from the plugin's <em>Zen Cart Modified Files</em> folder to your Zen Cart's file structure:<ol>
+      <li><span class="po2">/includes/auto_loaders/config.zen4wp.php</span></li>
+      <li><span class="po2">/includes/init_includes/init_zen4wp.php</span></li>
+      <li><span class="po2">/includes/languages/english/zen4wp_add_product.php</span></li>
+      <li><span class="po2">/includes/modules/pages/zen4wp_add_product/header_php.php</span></li>
+      <li><span class="po2">/YOUR_ADMIN/includes/auto_loaders/config.zen4wp.php</span></li>
+      <li><span class="po2">/YOUR_ADMIN/includes/init_includes/init_zen4wp_config.php</span></li>
+    </ol></li>
+    <li>Click the &quot;Admin Home&quot; link at the top of your Zen Cart's admin console.  You'll see the message <em>Zen Cart for WordPress (zen4wp) install completed!</em> at the top of the screen.</li>
+    <li>Click <em>Configuration-&gt;Sessions</em> and set the configuration values necessary for the Zen Cart/WordPress shopping cart communications:<ol>
+      <li><em>Enable zen4wp Shopping Cart?</em>.  This control enables (<em>True</em>) or disables (<em>False</em>, the default) the creation of the shared cookie between the Zen Cart and WordPress installations.</li>
+      <li><em>zen4wp Domain</em>.  Identifies the root domain value that is common between the Zen Cart and WordPress installations. Currently-supported configurations are:<ol>
+        <li><em>Subdirectory installation</em>.  One of the installations is accessed as a subdirectory of the other, e.g. www.example.com/blog or www.example.com/store.</li>
+        <li><em>Peer subdomain installation</em>.  Each of the installations is accessed as a subdomain with the same root, e.g. blog.example.com and store.example.com.</li>
+        <li><em>Subdomain installation</em>. One of the installations is accessed as a subdomain of the other, e.g. blog.example.com and www.example.com.</li>
+       </ol>For each of the examples above, this field would be specified as <strong>example.com</strong>.</li>
+      <li><em>zen4wp Secret Key</em>. Identifies a secret value shared between the Zen Cart and WordPress installations, allowing the WordPress widget to ensure the validity of the information present in the shared root-domain cookie. You may enter any random value; the secret key should be at least 10 digits in length and should contain both numbers and a combination of upper- and lower-case letters. You can use a password generator like the one at http://passwordsgenerator.net/ to create your secret key. When using the <em>Secure Password Generator</em> service, be sure to un-check the following options: Include Symbols, Exclude Similar Characters and Generate On The Client.</li>
+    </ol></li>
+    <li><strong>Note:</strong> The file /wp-content/plugins/zen4wp/zen4wp.php contains a block of language constants that are used in the creation of the add-to-cart/buy-now button (such as "Sold Out" and "Call for Price"). The values assigned to these constants are based on the default wording present in the Zen Cart v1.5.1 release's /includes/languages/english.php file.</li> 
+  </ul></li>
+</ol>
+
+<h2>Upgrading from v1.2x to v1.3.0</h2>
+<p>Remove wp-content/themes/YOUR_THEME/zen4wp_shortcodes.php.altogether from your store. This file has been moved to a new directory.</p>
+<p>Don't forget to edit /wp-content/themes/YOUR_THEME/functions.php to remove the following line:
+<br />
+include ( 'zen4wp_shortcodes.php' );</p>
+<h2>Un-install</h2>
+<p>To remove Zen4WP altogether from your store, follow the normal WordPress process for deactivating and deleting plugins. If you have purchased the premium Option 2, you will also need to delete the new files that were previously copied to your Zen Cart installation.  There are instructions in the comments of the zen4wp_uninstall.sql file regarding how to remove the configuration table values.</p>
+<hr />
+
+<h2>Zen4WP Usage</h2>
+<p>For each of the widgets, the client will need to use the WordPress admin's<em>Plugins-&gt;All </em>to <em>Activate</em> them.  Once activated, the client can use the WordPress admin's <em>Appearance-&gt;Widgets</em> to place and configure each of the widgets.</p>
+<h3>Widget and Shortcode Details</h3>
+<h4 id="bs">Best Sellers Widget</h4>
+<p>The <em>Best Sellers</em> widget (zen4wp_best_sellers.php) interrogates the Zen Cart database and retrieves the products with the largest <em>products_purchased</em> count.  Just like the Zen Cart best_sellers sidebox, its output is an HTML ordered-list containing links to each of the products and using each product's name as the anchor-text.</p>
+<p>Each instance of the widget can be customized to specify:</p>
+<ol>
+  <li><strong>Title</strong>.  The title used on the blog-site for the information.</li>
+  <li><strong>Maximum Number to Display</strong>. The number of best-sellers to include in the list.</li>
+  <li><strong>Include sales count</strong>. A checkbox that indicates whether or not to include the products' purchase-count in the display.</li>
+</ol>
+
+<h4 id="cl">Categories Widget</h4>
+<p>The <em>Categories</em> widget (zen4wp_categories.php) interrogates the Zen Cart database and retrieves a list of top-level categories.  Just like the Zen Cart categories sidebox, its output is collection of HTML links that reference each of these categories using the category's name as the anchor-text. This widget is <em>hideCategories</em>-aware; top-level categories that are currently hidden are not included in the display. The following configuration settings from the Zen Cart admin's <em>Configuration</em> menus are used:</p>
+<ol>
+  <li><strong>My Store</strong><ol>
+    <li><em>Show Category Counts</em></li>
+  </ol></li>
+  <li><strong>Layout Settings</strong><ol>
+    <li><em>Categories Separator between the Category Name and Count</em></li>
+    <li><em>Categories Count Prefix</em></li>
+    <li><em>Categories Count Suffix</em></li>
+    <li><em>Categories with 0 Products Status</em></li>
+  </ol></li>
+</ol>
+<p>Each instance of the widget can be customized to specify:</p>
+<ol>
+  <li><strong>Title</strong>.  The title used on the blog-site for the information.</li>
+</ol>
+
+<h4 id="fp">Featured Products Widget</h4>
+<p>The <em>Featured Products</em> widget (zen4wp_featured.php) interrogates the Zen Cart database and retrieves a list of products that are currently configured as "featured".  Just like the Zen Cart featured sidebox, its output is collection of HTML div's that contain links to each of the products and using each product's image and name as the anchor-text &mdash; the product's price is also included.</p>
+<p>Each instance of the widget can be customized to specify:</p>
+<ol>
+  <li><strong>Title</strong>.  The title used on the blog-site for the information.</li>
+  <li><strong>Maximum Number to Display</strong>. The number of random featured products to include in the list.</li>
+  <li><strong>Number of Columns for the Display</strong>. The number of columns to use when displaying the list.</li>
+</ol>
+
+<h4 id="ml">Manufacturers Widget</h4>
+<p>The <em>Manufacturers</em> widget (zen4wp_manufacturers.php) interrogates the Zen Cart database and retrieves a list of the manufacturers in the Zen Cart.  Its output is collection of HTML div's that contain links to each of the manufacturers' index-listing pages, using the manufacturer's name as the anchor-text. The following configuration settings from the Zen Cart admin's <em>Configuration</em> menus are used:</p>
+<ol>
+  <li><strong>Maximum Values</strong><ol>
+    <li><em>Manufacturers List - Verify Product Exist</em></li>
+    <li><em>Length of Manufacturers Name</em></li>
+  </ol></li>
+</ol>
+<p>Each instance of the widget can be customized to specify:</p>
+<ol>
+  <li><strong>Title</strong>.  The title used on the blog-site for the information.</li>
+</ol>
+
+<h4 id="np">New Products Widget</h4>
+<p>The <em>New Products</em> widget (zen4wp_new.php) interrogates the Zen Cart database and retrieves a list of products that are currently configured as "new".  Just like the Zen Cart new-products sidebox, its output is collection of HTML div's that contain links to each of the products and using each product's image and name as the anchor-text &mdash; the product's price is also included. The following configuration settings from the Zen Cart admin's <em>Configuration</em> menus are used:</p>
+<ol>
+  <li><strong>Maximum Values</strong><ol>
+    <li><em>New Product Listing - Limited to ...</em></li>
+  </ol></li>
+  <li><strong>New Listing</strong><ol>
+    <li><em>Mask Upcoming Products from being included as New Products</em></li>
+  </ol></li>
+</ol>
+<p>Each instance of the widget can be customized to specify:</p>
+<ol>
+  <li><strong>Title</strong>.  The title used on the blog-site for the information.</li>
+  <li><strong>Maximum Number to Display</strong>. The number of random new products to include in the list.</li>
+  <li><strong>Number of Columns for the Display</strong>. The number of columns to use when displaying the list.</li>
+</ol>
+
+<h4 id="sp">Products on Special Widget</h4>
+<p>The <em>Products on Special</em> widget (zen4wp_specials.php) interrogates the Zen Cart database and retrieves a list of products that are currently configured as "on special".  Just like the Zen Cart specials sidebox, its output is collection of HTML div's that contain links to each of the products and using each product's image and name as the anchor-text &mdash; the product's price is also included.</p>
+<p>Each instance of the widget can be customized to specify:</p>
+<ol>
+  <li><strong>Title</strong>.  The title used on the blog-site for the information.</li>
+  <li><strong>Maximum Number to Display</strong>. The number of random special products to include in the list.</li>
+  <li><strong>Number of Columns for the Display</strong>. The number of columns to use when displaying the list.</li>
+</ol>
+
+<h4 id="pr">Product Reviews Widget</h4>
+<p>The <em>Product Reviews</em> widget (zen4wp_reviews.php) interrogates the Zen Cart database and retrieves a list of product reviews.  Just like the Zen Cart reviews sidebox, its output is collection of HTML div's that contain links to each of the reviews and using the reviews text and star-rating and the associated product's image as the anchor-text.</p>
+<p>Each instance of the widget can be customized to specify:</p>
+<ol>
+  <li><strong>Title</strong>.  The title used on the blog-site for the information.</li>
+  <li><strong>Maximum Number to Display</strong>. The number of random product reviews to include in the list.</li>
+  <li><strong>Number of Columns for the Display</strong>. The number of columns to use when displaying the list.</li>
+  <li><strong>Display this many characters from the review's text</strong>.  The maximum number of characters of each review's text to display.</li>
+</ol>
+
+<h4 id="sc">Shopping Cart Widget</h4>
+<p>The <em>Shopping Cart</em> widget (zen4wp_shopping_cart.php), if enabled in the shared database, interrogates a root-domain cookie created by the Zen Cart's processing to retrieve the customer's current login and cart (number of items, total amount and currency) information.</p>
+<p>Each instance of the widget can be customized to specify:</p>
+<ol>
+  <li><strong>Title</strong>.  The title used on the blog-site for the information.</li>
+  <li><strong>Display link to shopping_cart page?</strong>. A check-box to indicate whether or not to display the link.</li>
+  <li><strong>Display link to login/logoff page?</strong>. A check-box to indicate whether or not to display the link.</li>
+  <li><strong>Empty cart display</strong>.  A check-box to control whether or not to display the widget even if the cart is empty.</li>
+  <li><strong>Display format</strong>.  A check-box to control the format of the shopping cart widget's display.  Check the box to have the cart display in a Zen Cart sidebox format; leave the box unchecked to have the cart display in a single-line "header" format.</li>
+  <li><strong>Cart icon filename</strong>.  If the <em>Display format</em> specified that a header-format is to be used, this field identifies the name of the shopping cart icon to use.  The file resides in the Zen Cart current template's icon directory &mdash; /includes/templates/CURRENT_TEMPLATE/images/icons.</li>
+</ol>
+
+<h4 id="tm">Testimonials Widget</h4>
+<p>The <em>Testimonials</em> widget (zen4wp_testimonials.php), if the <a href="http://www.zen-cart.com/downloads.php?do=file&amp;id=299" target="_blank">Testimonial Manager</a> plugin is installed in the shared database, displays a collection of testimonials from the Zen Cart store. The following configuration settings from the Zen Cart admin's <em>Configuration</em> menus are used:</p>
+<ol>
+  <li><strong>Testimonial Manager</strong><ol>
+    <li><em>Number Of Testimonials to display in Testimonials Sidebox</em></li>
+    <li><em>Display Truncated Testimonials in Sidebox</em></li>
+    <li><em>Length of truncated testimonials to display</em></li>
+    <li><em>Display View All Testimonials Link In Sidebox</em></li>
+    <li><em>Display Add New Testimonial Link In Sidebox</em></li>
+    <li><em>Testimonial Image Width</em></li>
+    <li><em>Testimonial Image Height</em></li>
+  </ol></li>
+</ol>
+<p>Each instance of the widget can be customized to specify:</p>
+<ol>
+  <li><strong>Title</strong>.  The title used on the blog-site for the information.</li>
+  <li><strong>Maximum Number to Display</strong>. The number of random testimonials to include in the list.</li>
+  <li><strong>Number of Columns for the Display</strong>. The number of columns to use when displaying the list.</li>
+  <li><strong>Display this many characters from the testimonials's text</strong>.  The maximum number of characters of each testimonials's text to display.</li>
+</ol>
+<p><strong>Note:</strong> The widget will only display if one or more testimonial has previously been written.</p>
+
+<h4 id="zc">Zen4WP - Shortcodes</h4>
+<p>To use the various Zen4WP shortcodes, you must first activate the shortcodes function. Go to the WordPress admin's <em>Plugins-&gt;All</em> to activate the <strong>Zen4WP - Shortcodes</strong> plugin. Word4WP shortcodes will not work until you activate this plugin.</p>
+<h4 id="zc">[zencat] Shortcode</h4>
+<p>The <em>[zencat]</em> shortcode (in zen4wp_shortcodes.php) creates an HTML anchor, linking to the specified Zen Cart category's listing page, using the category's name as the anchor-text.  If a category with the specified ID is not found, the shortcode generated some <em>category not found</em> text instead.</p>
+<p>Within a blog entry, you use the shortcode as:</p>
+<pre>[zencat id=<em>categories_id</em>]</pre>
+<p>using the associated category's Zen Cart <em>categories_id</em> value.  The shortcode generator looks up the <em>categories_id</em> value in the database and creates an HTML anchor tag to the category's listing (e.g. index) page.</p>
+
+<h4 id="zp">[zenprod] Shortcode</h4>
+<p>The <em>[zenprod]</em> shortcode (in zen4wp_shortcodes.php) creates an HTML block that contains information about a particular product in your Zen Cart.  If a product with the specified ID is not found, the shortcode generates the message: <span style="color: red;">The product with id of xx was not found.</span>. The following configuration settings from your Zen Cart admin's <em>Configuration</em> menus are used:</p>
+<ol>
+  <li><strong>Attribute Settings</strong><ol>
+    <li><em>Read Only Option Type - Ignore for Add-to-Cart</em></li>
+  </ol></li>
+  <li><strong>Product Listing</strong><ol>  
+    <li><em>Display Add to Cart</em></li>
+  </ol></li>
+</ol>
+<p>Within a blog entry, you use the shortcode as:</p>
+<pre>[<b>zenprod id=<em>products_id</em></b> name=<em>name_sort</em> image=<em>image_sort</em> price=<em>price_sort</em> <span class="po2">cart=<em>cart_sort</em></span>]</pre>
+<p>The elements styled with <b>bold</b> are required and the cart attribute is ignored unless you've purchased the <span class="po2">Premium &mdash; Option 2</span> package. Each of the <em>xxxx</em>_sort attribute values identify the order in which the associated information is output.  The value is specified as a positive integer value; a value of 0 indicates that the associated information is not to be output.  If neither of the <em>name</em> and <em>image</em> attributes are specified, the shortcode will be interpreted with <em>name=1</em>.</p>
+<p>Each <em>[zenprod id=nn name=ww image=xx price=yy cart=zz]</em> shortcode is formatted using the following formats, with each item output in the order you specified:</p>
+<pre><code>
+&lt;div class=&quot;zenprod zenprod<em>wwxxyyzz</em> zenprod-id-<em>nn</em>&gt;
+  &lt;div class=&quot;zenprod_name&quot;&gt;&lt;a href=&quot;{products_link}&quot;&gt;{product_name}&lt;/a&gt;&lt;/div&gt;
+  &lt;div class=&quot;zenprod_image&quot;&gt;&lt;a href=&quot;{products_link}&quot;&gt;&lt;img src=&quot;{product_small_image}&quot; alt=&quot;{product_name}&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+  &lt;div class=&quot;zenprod_price&quot;&gt;{product_price_info}&lt;/div&gt;
+  &lt;div class=&quot;zenprod_cart&quot;&gt;{product_cart_info}&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>The file /wp-content/plugins/zen4wp/css/zen4wp_zenprod.css is automatically loaded if the current WordPress page includes one or more <b>zenprod</b> shortcodes.</p>
+
+<h4 id="zm">[zenmfgr] Shortcode</h4>
+<p>The <em>[zenmfgr]</em> shortcode (in zen4wp_shortcodes.php) creates an HTML anchor, linking to the specified Zen Cart manufacturer's listing page, using the manufacturer's name as the anchor-text.  If a manufacturer with the specified ID is not found, the shortcode generated some <em>manufacturer not found</em> text instead.</p>
+<p>Within a blog entry, you use the shortcode as:</p>
+<pre>[zenmfgr id=<em>manufacturers_id</em>]</pre>
+<p>using the associated category's Zen Cart <em>manufacturers_id</em> value.  The shortcode generator looks up the <em>manufacturers_id</em> value in the database and creates an HTML anchor tag to the manufacturer's listing (e.g. index) page.</p>
+
+<h2>Version History</h2>
+<ul>
+  <li>v1.2.2, 2013-09-23, Initial release</li>
+  <li>v1.2.3, 2013-10-03:<ul>
+    <li>Incorrect display of some sale prices, especially Salemaker sales and some free products. Changed zen4wp_functions_prices.php.</li>
+  </ul></li>
+  <li>v1.3.0, 2014-03-30:
+    <ul>
+    <li>Provided enhancements to the <a href="#zp">[zenprod] Shortcode</a>.</li>
+  </ul>
+  </li>
+      <li>v1.3.1, 2014-09-18:
+          <ul>
+    <li>Best Sellers widget: Throwing "printf() too few args" on line 97</li>
+    <li>Correct various PHP notify errors (a couple of which were variable "misspellings").</li>
+    <li>Duplicated definition: ZEN_TABLE_PRODUCT_TYPES</li>
+        </ul>
+      </li>
+
+</ul>
+</body>
+</html>
